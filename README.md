@@ -127,7 +127,6 @@ Our restless coaches supported us in this project:
 * Raoul Diffouo https://github.com/diraulo
 * Faraz Naeem https://github.com/faraznaeem
 * Magnus Þór Ársælsson https://github.com/magnus-thor
-* Olver Ochman ...
 
 
 ## License
