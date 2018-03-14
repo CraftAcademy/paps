@@ -1,0 +1,82 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/davidboll/projects/paps/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/controllers/application_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1521047583
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/davidboll/projects/paps/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/controllers/application_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/davidboll/projects/paps/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1521047588
+  }
+}
