@@ -1,11 +1,11 @@
-# Pap News 
+# Pap News
 
 Welcome to Pap News - _Spread the knowledge!_
 
 ## Description
 Week 8 Project of Craft Academy cohort January 2018.
 
-PapsNews is a newsagency Web Application used to share your local and international news directly on your device screen.  
+PapsNews is a News Agency Web Application used to share your local and international news directly on your device screen.  
 
 Once you land on the Homepage (https://....herokuapp.com/), you need to Signup in order to have access to the web contents
 (click on sign up in the navbar)
@@ -19,7 +19,7 @@ You can clone our repo!
 ### Prerequisites
 
 Install Ruby 2.4.1
- 
+
 ```
 rvm install 2.4.1
 ```
@@ -59,7 +59,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Acceptance Tests
 
-Acceptance test are written in Cucumber using Capybara commands. 
+Acceptance test are written in Cucumber using Capybara commands.
 
 Features are stored in ./features
 
@@ -69,9 +69,7 @@ To run the acceptance test suite, execute Cucumber in you terminal:
 cucumber
 ```
 
-
-
-### Unit Tests 
+### Unit Tests
 
 Unit test are written in rspec
 
@@ -89,8 +87,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
+Visit (https://papnews.herokuapp.com/) for deployed app
 
 ## Technologies
 
@@ -98,17 +95,18 @@ Ruby on Rails
 Haml
 Bootstrap
 Sass
-Active Admin 
+Active Admin
 Stripe
 Devise
 Pundit
 i18n
 Active Storage
-
+CD with Heroku
+CI with TravisCI and Coveralls
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -137,4 +135,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
