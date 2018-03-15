@@ -2,10 +2,6 @@ Given("I visit the {string} page") do |string|
   visit root_path
 end
 
-When("show me the page") do
-  save_and_open_page # Write code here that turns the phrase above into concrete actions
-end
-
 When("I click {string} link") do |string|
   click_link_or_button string
 end
@@ -18,10 +14,11 @@ When("I click {string} button") do |string|
   click_button string
 end
 
-Then("I should be on {string} page") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I should be on {string} page") do |title|
+  article = Article.find_by_title(title)
+  expect(page.current_path).to eq article_path(article)
 end
 
 Then("I should see {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content string  
 end

@@ -6,7 +6,6 @@ Feature: Create articles
   Background:
     Given I visit the "index" page
     When I click "New Article" link
-    And show me the page
 
   Scenario: Successfully create an article
     When I fill in "Title" with "A Whole New World"
