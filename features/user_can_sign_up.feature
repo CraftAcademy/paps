@@ -7,7 +7,6 @@ Feature: User can sign up
     Given I visit the site
     Then I click "Sign up"
     And I fill "Email" with "antonella@email.com"
-    Then show me the page
     And I fill "Password" with "password123"
     And I fill "Password confirmation" with "password123"
     And I click "Sign up"
