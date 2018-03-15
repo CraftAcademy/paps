@@ -28,3 +28,4 @@
 
 # Ignore others
 .DS_Store
+.idea/
