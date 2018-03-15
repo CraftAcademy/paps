@@ -8,8 +8,7 @@ Week 8 Project of Craft Academy cohort January 2018.
 PapsNews is a newsagency Web Application used to share your local and international news directly on your device screen.  
 
 Once you land on the Homepage (https://....herokuapp.com/), you need to Signup in order to have access to the web contents
-(click on sign up in the navbar), you will automatically have 7 days free trial, at the end of which you can become a subscriber for a minimum period of 12 months.
-The registration process requires you to enter your name, surname, password, password confirmation and your e-mail address. 
+(click on sign up in the navbar)
 
 
 ## Getting Started
