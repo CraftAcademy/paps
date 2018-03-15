@@ -1,1 +1,11 @@
-hello
+= form_with model: Article.new, url: articles_path, local: true do |form|
+  %p
+    = form.label :title
+    %br/
+    = form.text_field :title, id: :article_title
+  %p
+    = form.label :content
+    %br/
+    = form.text_area :content, id: :article_content
+  %p
+    = form.submit placeholder: "Create Article"
