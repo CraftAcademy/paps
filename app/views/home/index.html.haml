@@ -1,4 +1,6 @@
 %h1 Home#index
 %p Find me in app/views/home/index.html.haml
 
-%button{:type => "button"} Sign up
+%form{:action => "/users/sign_up"}
+  %input{:type => "submit", :value => "Sign up"}/
+
