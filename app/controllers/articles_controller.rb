@@ -10,9 +10,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      flash[:success] = "Article was successfully created."
+      redirect_to @article
     else
-      render 'new', notice: "Please enter text"
+      flash[:error] = "Please enter valid amount"
+      render 'new'
     end
   end
 
