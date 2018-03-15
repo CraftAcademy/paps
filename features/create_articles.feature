@@ -5,8 +5,8 @@ Feature: Create articles
 
   Background:
     Given I visit the "index" page
-    When I click "new article" link
-    And show me the page 
+    And show me the page
+    When I click "New Article" link
 
   Scenario: Successfully create an article
     When I fill in "Title" with "A Whole New World"
