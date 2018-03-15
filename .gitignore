@@ -29,3 +29,5 @@
 # Ignore others
 .DS_Store
 .idea/
+.idea
+.idea/*
