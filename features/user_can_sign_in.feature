@@ -13,7 +13,6 @@ Feature: User can sign in
     And I click "Sign in"
     When I fill in "Email" with "harald@norge.no"
     And I fill in "Password" with "OsloOslo123"
-    Then show me the page
     And I click "Log in"
     Then I should see message "Signed in successfully."
 
