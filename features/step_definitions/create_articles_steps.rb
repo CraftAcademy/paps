@@ -13,12 +13,3 @@ end
 When("I click {string} button") do |string|
   click_button string
 end
-
-Then("I should be on {string} page") do |title|
-  article = Article.find_by_title(title)
-  expect(page.current_path).to eq article_path(article)
-end
-
-Then("I should see {string}") do |string|
-  expect(page).to have_content string  
-end
