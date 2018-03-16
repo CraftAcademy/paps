@@ -1,4 +1,4 @@
-Given("I visit the {string} page") do |string|
+Given("I visit the Homepage") do
   visit root_path
 end
 
@@ -12,4 +12,8 @@ end
 
 When("I click {string} button") do |string|
   click_button string
+end
+
+Then("I should see {string}") do |string|
+  expect(page).to have_content string
 end

@@ -1,7 +1,4 @@
 class ArticlesController < ApplicationController
-  def index
-    @article = Article.all
-  end
 
   def new
     @article = Article.new
@@ -9,6 +6,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    if @article.save
+      flash[:success] = "Article Saved"
+    else
+      flash[:error] = "Please enter valid fields"
+      render 'new'
+    end
   end
 
   private
