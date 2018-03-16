@@ -7,7 +7,3 @@ end
 When("I fill in {string} with {string}") do |input, value|
   fill_in input, with: value
 end
-
-Then("I should see {string}") do |string|
-
-end
