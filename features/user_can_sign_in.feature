@@ -1,4 +1,4 @@
 Feature: User can sign in
   As a user
-  In order to login to my account
-  I should see a login page
+  In order to access my account
+  I should be able to log in
