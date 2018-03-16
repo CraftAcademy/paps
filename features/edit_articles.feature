@@ -4,12 +4,12 @@ Feature: Edit articles
   I would like to be able to edit articles
 
   Background:
-    Given  following article exist
-    | title               | body                          |
+    Given  following article exists
+    | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
 
   Scenario: User can edit an article
-    Given I am on the "A Whole New World" article page
+    Given I am on the "A Whole New World" page
     When I click on "Edit Article"
     And I fill in "Title" with "Do you know the Truth?"
     And I fill in "Content" with "It's inside of you"
