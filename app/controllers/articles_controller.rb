@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article was successfully created."
       redirect_to @article
     else
-      flash[:error] = "Please enter valid amount"
+      flash[:error] = "Field cannot be blank"
       render 'new'
     end
   end
