@@ -12,4 +12,5 @@ Feature: User can log out
 
   Scenario: User logs out
     Given I visit the site
-    And I should see message "Welcome! You have signed up successfully."
+    And I click "Log out"
+    And I should see message "Signed out successfully."
