@@ -2,7 +2,7 @@ Feature: User can log out
   As a user
   In order to safely leave the site
   I should be able to logout from my account
-  
+
   Background:
     Given the following user exists
       | email           | password    | password_confirmation |
