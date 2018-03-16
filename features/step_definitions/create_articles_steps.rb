@@ -15,5 +15,5 @@ When("I click {string} button") do |string|
 end
 
 Then("I should be redirected to Homepage") do
-  
+  expect(current_path).to eq root_path
 end
