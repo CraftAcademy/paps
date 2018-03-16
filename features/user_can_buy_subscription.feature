@@ -10,7 +10,7 @@ Feature: User can pay for subscription using credit card
     And I am logged in as "harald@norge.no"
 
   Scenario: User signs up for a subscription with valid credit card
-    Given I am on the "create subscription" page
+    Given I am on the create subscription page
     And I click "pay with card"
     And I fill in "Card number" with "4242 4242 4242 4242"
 

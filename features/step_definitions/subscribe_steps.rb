@@ -1,5 +1,5 @@
-Given("I am on the {string} page") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I am on the create subscription page") do
+  visit new_subscription_path
 end
 
 Given("Í fill in {string} with {string}") do |string, string2|
