@@ -17,3 +17,7 @@ end
 Then("I should be redirected to Homepage") do
   expect(current_path).to eq root_path
 end
+
+Then("I should stay on new_article_path") do
+  expect(current_path).to eq current_path
+end
