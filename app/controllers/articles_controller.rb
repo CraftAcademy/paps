@@ -7,10 +7,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:success] = "Article Saved"
+      redirect_to root_path
     else
-      flash[:error] = "Please enter valid fields"
-      render 'new'
+      redirect_to new_article_path
     end
   end
 

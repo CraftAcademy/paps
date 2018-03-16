@@ -14,6 +14,6 @@ When("I click {string} button") do |string|
   click_button string
 end
 
-Then("I should see {string}") do |string|
-  expect(page).to have_content string
+Then("I should be redirected to Homepage") do
+  
 end
