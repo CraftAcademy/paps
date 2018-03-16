@@ -9,10 +9,6 @@ Given("I am on the {string} page") do |title|
   visit(article_path(article))
 end
 
-When("I click on {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Then("I should be on the {string} page") do |string|
   pending # Write code here that turns the phrase above into concrete actions
 end

@@ -10,10 +10,10 @@ Feature: Edit articles
 
   Scenario: User can edit an article
     Given I am on the "A Whole New World" page
-    When I click on "Edit Article"
+    When I click "Edit Article" link
     And I fill in "Title" with "Do you know the Truth?"
     And I fill in "Content" with "It's inside of you"
-    And I click on "Submit"
+    And I click "Submit" button
     Then I should be on the "Do you know the Truth?" page
     And I should see "Do you know the Truth?"
     And I should see "It's inside of you"
