@@ -18,11 +18,11 @@ Feature: Create articles
     Then I fill in "Title" with "A Whole New World"
     Then I fill in "Content" with " "
     And I click "Create Article" button
-    Then I should stay on new_article_path
+    Then I should stay on new article page
 
   Scenario: Failed to fill in title field
     When I click "New Article" link
     Then I fill in "Title" with " "
     Then I fill in "Content" with "New content"
     And I click "Create Article" button
-    Then I should stay on new_article_path
+    Then I should stay on new article page
