@@ -2,10 +2,6 @@ Given("I am on the create subscription page") do
   visit new_subscription_path
 end
 
-Then("{string} should be a subscriber") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 And(/^I click on the "([^"]*)" button$/) do |button|
   click_button button
   sleep(5)

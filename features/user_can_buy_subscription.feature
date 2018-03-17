@@ -18,4 +18,3 @@ Feature: User can pay for subscription using credit card
     And I fill in stripe field "Expiry" with "11/2022"
     And submit the stripe form
     Then I should see message "Welcome as a subscriber!"
-    And "harald@norge.no" should be a subscriber
