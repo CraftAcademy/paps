@@ -12,4 +12,4 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-World(FactoryBOt::Syntax::Methods)
+World(FactoryBot::Syntax::Methods)
