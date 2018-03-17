@@ -8,6 +8,11 @@ before_script:
   - bundle exec rails db:create db:test:prepare
 script:
   - bundle exec rails ci:tests
+
+env:
+  global:
+    - IS_TRAVIS=true STRIPE_TEST_SECRET_KEY=sk_test_TRLNCXB7rOzUNOX6VxAK17KD
+
 install:
   - wget -N http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P ~/
   - unzip ~/chromedriver_linux64.zip -d ~/
