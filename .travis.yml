@@ -1,8 +1,10 @@
 language: ruby
 rvm:
  - 2.4.1
+sudo: required --no-sandbox
 addons:
   chrome: stable
+
 before_script:
   - bundle install
   - bundle exec rails db:create db:test:prepare
