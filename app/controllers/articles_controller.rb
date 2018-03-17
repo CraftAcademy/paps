@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    permitted_columns = params.require(:article).permit(:title, :description)
+    permitted_columns = params.require(:article).permit(:title, :content)
     @article.update_attributes(permitted_columns)
 
     render 'show'

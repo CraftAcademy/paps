@@ -14,7 +14,7 @@ Feature: Edit articles
     Then I fill in "Title" with "Do you know the Truth?"
     And I fill in "Content" with "It's inside of you"
     And I click "Submit" button
-    Then I should be on the "Do you know the Truth?" page
+    Then I should be on "Do you know the Truth?" page
     And I should see "Do you know the Truth?"
     And I should see "It's inside of you"
     Then I should see "Article successfully updated"
