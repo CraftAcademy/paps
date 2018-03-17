@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+
   def index
     @article = Article.all
   end
@@ -19,6 +20,21 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params[:article])
+      flash[:success] = 'Article successfully updated'
+      redirect_to article_path(@article)
+    else
+      flash[:error] = error_message(@article)
+      render 'edit'
+    end
+  end
+
+  def edit
     @article = Article.find(params[:id])
   end
 

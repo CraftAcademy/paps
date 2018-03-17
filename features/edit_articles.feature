@@ -11,13 +11,13 @@ Feature: Edit articles
   Scenario: User can edit an article
     Given I am on the "A Whole New World" page
     When I click "Edit Article" link
-    And I fill in "Title" with "Do you know the Truth?"
+    Then I fill in "Title" with "Do you know the Truth?"
     And I fill in "Content" with "It's inside of you"
     And I click "Submit" button
     Then I should be on the "Do you know the Truth?" page
     And I should see "Do you know the Truth?"
     And I should see "It's inside of you"
-    Then I should see "A Whole New World article has been edited"
+    Then I should see "Article successfully updated"
     And I should be on the "Index" page
 
   # Scenario: User edits the article and leave title empty
