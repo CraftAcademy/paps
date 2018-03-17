@@ -15,5 +15,6 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :test
   config.active_support.deprecation = :stderr
+  config.stripe.secret_key = "sk_test_TRLNCXB7rOzUNOX6VxAK17KD"
 
 end
