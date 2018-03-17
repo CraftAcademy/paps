@@ -1,7 +1,5 @@
 class SubscriptionController < ApplicationController
-
-  def new
-  end
+  def new; end
 
   def create
     # 1. Create a customer with Stripe
@@ -10,15 +8,15 @@ class SubscriptionController < ApplicationController
     # 4. Flash "Welcome as a subscriber!" and redirect to root path
 
     customer = Stripe::Customer.create(
-        email: params[:stripeEmail],
-        source: params[:stripeToken]
+      email: params[:stripeEmail],
+      source: params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
-                               customer: customer.id,
-                               amount: 1000,
-                               description: 'Subscription to PAPS News',
-                               currency: 'sek'
+      customer: customer.id,
+      amount: 1000,
+      description: 'Subscription to PAPS News',
+      currency: 'sek'
     )
 
     if charge.paid?
@@ -26,8 +24,13 @@ class SubscriptionController < ApplicationController
       current_user.save
       redirect_to root_path, notice: 'Welcome as a subscriber!'
     else
-      redirect_to new_subscription_path, notice: 'WTF?'
+      redirect_back_with_notice
     end
   end
 
+  private
+
+  def redirect_back_with_notice
+    redirect_back(fallback_location: root_path, notice: 'Error')
+  end
 end

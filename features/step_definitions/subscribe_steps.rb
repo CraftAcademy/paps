@@ -3,7 +3,7 @@ Given("I am on the create subscription page") do
 end
 
 And(/^I click on the "([^"]*)" button$/) do |button|
-  click_button button
+  click_link_or_button button
   sleep(5)
   @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
 end
@@ -19,4 +19,8 @@ And(/^submit the stripe form$/) do
     find('.Section-button').click
   end
   sleep(5)
+end
+
+Then("I should not see message {string}") do |message|
+  expect(page).not_to have_content(message)
 end
