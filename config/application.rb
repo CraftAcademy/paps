@@ -16,6 +16,7 @@ Bundler.require(*Rails.groups)
 module Paps
   class Application < Rails::Application
     config.load_defaults 5.2
+
     config.generators do |generate|
       generate.helper false
       generate.assets false
@@ -25,5 +26,9 @@ module Paps
       generate.controller_specs false
       generate.system_tests false
     end
+
+    config.stripe.secret_key = ENV['STRIPE_SECRET']
+    config.stripe.publishable_key = ENV['STRIPE_APP']
+    config.stripe.endpoint = '/payment/stripe-integration'
   end
 end

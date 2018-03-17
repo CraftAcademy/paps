@@ -12,11 +12,10 @@ Feature: User can pay for subscription using credit card
   @javascript
   Scenario: User signs up for a subscription with valid credit card
     Given I am on the create subscription page
-    And I click on the "pay with card" button
-    And I fill in "Card number" with "4242 4242 4242 4242"
-
-    And I fill in "CVC" with "123"
-    And I fill in "Expiry" with "11/2022"
+    And I click on the "Pay with Card" button
+    And I fill in stripe field "Card number" with "4242 4242 4242 4242"
+    And I fill in stripe field "CVC" with "123"
+    And I fill in stripe field "Expiry" with "11/2022"
     And submit the stripe form
     Then I should see message "Welcome as a subscriber!"
     And "harald@norge.no" should be a subscriber
