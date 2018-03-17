@@ -25,13 +25,10 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(params[:article])
-      flash[:success] = 'Article successfully updated'
-      redirect_to article_path(@article)
-    else
-      flash[:error] = error_message(@article)
-      render 'edit'
-    end
+    permitted_columns = params.require(:article).permit(:title, :description)
+    @article.update_attributes(permitted_columns)
+
+    render 'show'
   end
 
   def edit
