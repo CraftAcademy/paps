@@ -18,30 +18,30 @@ Feature: Edit articles
     And I should see "Do you know the Truth?"
     And I should see "It's inside of you"
     Then I should see "Article successfully updated."
-    
-  # Scenario: User edits the article and leave title empty
-  #   Given I am on the "A Whole New World" article page
-  #   When I click on "Edit Article"
-  #   And I fill in "Title" with ""
-  #   And I fill in "Content" with "A new fantastic point of view"
-  #   And I click on "Submit"
-  #   Then I should be on the "A Whole New World" page
-  #   And I should see "Title field cannot be blank"
-  #
-  # Scenario: User edits the article and leave content empty
-  #   Given I am on the "A Whole New World" article page
-  #   When I click on "Edit Article"
-  #   And I fill in "Title" with "A Whole New World"
-  #   And I fill in "Content" with ""
-  #   And I click on "Submit"
-  #   Then I should be on the "A Whole New World" page
-  #   And I should see "Content field cannot be blank"
-  #
-  # Scenario: User edits a article and leave title and content empty
-  #   Given I am on the "A Whole New World" article page
-  #   When I click on "Edit Article"
-  #   And I fill in "Title" with ""
-  #   And I fill in "Content" with ""
-  #   And I click on "Submit"
-  #   Then I should be on the "A Whole New World" page
-  #   And I should see "Fields cannot be blank"
+
+  Scenario: User edits the article and leave title empty
+    Given I am on the "A Whole New World" page
+    When I click "Edit Article" link
+    And I fill in "Title" with ""
+    And I fill in "Content" with "A new fantastic point of view"
+    And I click "Submit" button
+    Then I should be on "A Whole New World" page
+    And I should see "Fields cannot be blank."
+
+  Scenario: User edits the article and leave content empty
+    Given I am on the "A Whole New World" page
+    When I click "Edit Article" link
+    And I fill in "Title" with "Do you know the Truth?"
+    And I fill in "Content" with ""
+    And I click "Submit" button
+    Then I should be on "A Whole New World" page
+    And I should see "Fields cannot be blank."
+
+  Scenario: User edits a article and leave title and content empty
+    Given I am on the "A Whole New World" page
+    When I click "Edit Article" link
+    And I fill in "Title" with ""
+    And I fill in "Content" with ""
+    And I click "Submit" button
+    Then I should be on "A Whole New World" page
+    And I should see "Fields cannot be blank."

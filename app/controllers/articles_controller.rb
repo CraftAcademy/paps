@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
       flash[:success] = 'Article successfully updated.'
       redirect_to @article
     else
-      flash[:error] = "Field cannot be blank!"
+      flash[:error] = "Fields cannot be blank."
       render 'edit'
      end
   end
@@ -39,6 +39,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  
   private
 
   def article_params
