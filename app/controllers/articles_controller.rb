@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article was successfully created."
       redirect_to @article
     else
-      flash[:error] = "Field cannot be blank"
+      flash[:error] = "Field cannot be blank!"
       render 'new'
     end
   end
@@ -26,9 +26,13 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     permitted_columns = params.require(:article).permit(:title, :content)
-    @article.update_attributes(permitted_columns)
-
-    render 'show'
+    if @article.update_attributes(permitted_columns)
+      flash[:success] = 'Article successfully updated.'
+      redirect_to @article
+    else
+      flash[:error] = "Field cannot be blank!"
+      render 'edit'
+     end
   end
 
   def edit

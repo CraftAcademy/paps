@@ -17,9 +17,8 @@ Feature: Edit articles
     Then I should be on "Do you know the Truth?" page
     And I should see "Do you know the Truth?"
     And I should see "It's inside of you"
-    Then I should see "Article successfully updated"
-    And I should be on the "Index" page
-
+    Then I should see "Article successfully updated."
+    
   # Scenario: User edits the article and leave title empty
   #   Given I am on the "A Whole New World" article page
   #   When I click on "Edit Article"
