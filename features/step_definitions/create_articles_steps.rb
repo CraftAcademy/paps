@@ -6,11 +6,11 @@ When("I click {string} link") do |string|
   click_link_or_button string
 end
 
-When("I fill in {string} with {string}") do |input, value|
+Then("I fill in {string} with {string}") do |input, value|
   fill_in(input, with: value)
 end
 
-When("I click {string} button") do |string|
+And("I click {string} button") do |string|
   click_button string
 end
 
@@ -19,7 +19,7 @@ Then("I should be on {string} page") do |title|
   expect(page.current_path).to eq article_path(article)
 end
 
-Then("I should see {string}") do |string|
+And("I should see {string}") do |string|
   expect(page).to have_content string
 end
 
