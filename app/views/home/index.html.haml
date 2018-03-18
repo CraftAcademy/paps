@@ -7,3 +7,4 @@
 
 - @article.each do |article|
   %p= link_to "#{article.title}", article_path(article)
+  %p= sanitize(truncate(article.content, length: 150))
