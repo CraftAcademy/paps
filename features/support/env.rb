@@ -27,4 +27,5 @@ Capybara.register_driver :selenium do |app|
       options: options
   )
 end
+
 Capybara.javascript_driver = :selenium
