@@ -22,5 +22,4 @@ class SubscriptionController < ApplicationController
       redirect_to root_path, notice: 'Welcome as a subscriber!'
     end
   end
-
 end
