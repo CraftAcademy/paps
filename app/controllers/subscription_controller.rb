@@ -1,8 +1,9 @@
 class SubscriptionController < ApplicationController
-  def new; end
+  def new
+  end
 
   def create
-    
+
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
