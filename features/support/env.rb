@@ -27,5 +27,4 @@ Capybara.register_driver :selenium do |app|
       options: options
   )
 end
-Capybara.default_wait_time = 5
 Capybara.javascript_driver = :selenium

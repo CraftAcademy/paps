@@ -23,14 +23,7 @@ class SubscriptionController < ApplicationController
       current_user.subscriber = true
       current_user.save
       redirect_to root_path, notice: 'Welcome as a subscriber!'
-    else
-      redirect_back_with_notice
     end
   end
 
-  private
-
-  def redirect_back_with_notice
-    redirect_back(fallback_location: root_path, notice: 'Error')
-  end
 end
