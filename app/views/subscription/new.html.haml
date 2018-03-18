@@ -1,5 +1,5 @@
 %h1 Subscription
-= form_with url: new_subscription_path do
+= form_with url: subscription_index_path do
   %script.stripe-button{ src: 'https://checkout.stripe.com/checkout.js',
     data: {amount: 1000,
     description: 'Subscription to PAP\'s News',
