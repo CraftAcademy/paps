@@ -22,3 +22,7 @@ end
 Then("I should see {string}") do |string|
   expect(page).to have_content string
 end
+
+Then("I should be on article page") do
+  expect(page.current_path).to eq current_path
+end
