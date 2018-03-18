@@ -24,3 +24,7 @@ end
 Then("I should not see message {string}") do |message|
   expect(page).not_to have_content(message)
 end
+
+Then("I should be on the homepage") do
+  expect(current_path).to eq root_path
+end

@@ -17,6 +17,7 @@
       And I fill in stripe field "CVC" with "123"
       And I fill in stripe field "Expiry" with "11/2022"
       And submit the stripe form
+      Then I should be on the homepage
       Then I should see message "Welcome as a subscriber!"
 
     @javascript
