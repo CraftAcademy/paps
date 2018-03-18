@@ -4,6 +4,23 @@
 %p
   %strong Text:
   = @article.content
+
+%article
+  %h2= @article.title
+  %p= @article.content
+= form_with url:  comments_path(@article), scope: :comment do |form|
+  %p= form.label :email
+  = form.text_field :email, id: 'comment_email'
+  %p= form.label :content, 'Comment'
+  = form.text_area :content, cols: 50, rows: 5, id: 'comment_content'
+  = form.submit 'Submit comment'
+-# - if new_comment(@article).any?
+-#   - new_comment(@article).each do |comment|
+-#     %p= "Commented by: #{comment.email.empty? ? 'anonymous' : comment.email}"
+-#     %p= comment.content
+-#     - if current_user.can?(:moderate, comment)
+-#       = link_to 'Approve', comments_path(@article, comment, transition: :approve), method: :put if comment.submitted?
+-#       = link_to 'Reject', comments_path(@article, comment, transition: :reject), method: :put if comment.submitted?
 %p
   = link_to 'Edit Article', edit_article_path(@article)
   = link_to 'Delete Article', article_path(@article), method: :delete
