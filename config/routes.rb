@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :subscription, only: [:new, :create]
-  resources :articles, only: [:new, :index, :create, :show]
+  resources :articles
   root controller: :home, action: :index
 end
