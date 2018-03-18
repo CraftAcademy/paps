@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def new
@@ -25,8 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    permitted_columns = params.require(:article).permit(:title, :content)
-    if @article.update_attributes(permitted_columns)
+    if @article.update_attributes(article_params)
       flash[:success] = 'Article successfully updated.'
       redirect_to @article
     else

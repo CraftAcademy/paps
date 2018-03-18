@@ -11,7 +11,7 @@ Feature: Edit articles
   Scenario: User can edit an article
     Given I am on the "A Whole New World" page
     When I click "Edit Article" link
-    Then I fill in "Title" with "Do you know the Truth?"
+    And I fill in "Title" with "Do you know the Truth?"
     And I fill in "Content" with "It's inside of you"
     And I click "Submit" button
     Then I should be on "Do you know the Truth?" page
