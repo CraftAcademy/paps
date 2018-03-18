@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :author do
-    authors 'Man McMaster'
+    author 'Man McMaster'
   end
 end
