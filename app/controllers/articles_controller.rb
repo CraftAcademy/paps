@@ -7,10 +7,16 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to root_path
+      flash[:success] = "Article was successfully created."
+      redirect_to @article
     else
-      redirect_to new_article_path
+      flash[:error] = "Field cannot be blank"
+      render 'new'
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
