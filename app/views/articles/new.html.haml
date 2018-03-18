@@ -4,6 +4,10 @@
     %br/
     = form.text_field :title, id: :article_title
   %p
+    = form.label :author
+    %br/
+    = form.text_field :author, id: :article_author
+  %p
     = form.label :content
     %br/
     = form.text_area :content, id: :article_content
