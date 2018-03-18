@@ -2,11 +2,7 @@ class SubscriptionController < ApplicationController
   def new; end
 
   def create
-    # 1. Create a customer with Stripe
-    # 2. Create a charge for that customer
-    # 3. If charge is okay, update the user status to subscriber = true
-    # 4. Flash "Welcome as a subscriber!" and redirect to root path
-
+    
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
