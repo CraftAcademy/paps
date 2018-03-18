@@ -23,8 +23,12 @@ ActiveRecord::Schema.define(version: 2018_03_18_155404) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +49,5 @@ ActiveRecord::Schema.define(version: 2018_03_18_155404) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "articles"
 end
