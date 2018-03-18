@@ -18,7 +18,7 @@ And(/^submit the stripe form$/) do
   within_frame @stripe_iframe do
     find('.Section-button').click
   end
-  sleep(10)
+  sleep(5)
 end
 
 Then("I should not see message {string}") do |message|
