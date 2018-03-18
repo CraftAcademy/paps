@@ -7,8 +7,12 @@ Week 8 Project of Craft Academy cohort January 2018.
 
 PapsNews is a News Agency Web Application used to share your local and international news directly on your device screen.  
 
-Once you land on the Homepage (https://....herokuapp.com/), you need to Signup in order to have access to the web contents
+Once you land on the Homepage ```(https://....herokuapp.com/)```, you need to Signup in order to have access to the web contents
 (click on sign up in the navbar)
+
+README.md is updated daily during development of this project by our teams scrum master. Each day the scrum
+master adds the new features and technologies we implement to create a living document. This allows us to
+properly document every process our application can accomplish.
 
 
 ## Getting Started
@@ -86,8 +90,9 @@ Give an example
 ```
 
 ## Deployment
-
+```
 Visit (https://papnews.herokuapp.com/) for deployed app
+```
 
 ## Technologies
 
@@ -102,7 +107,7 @@ Pundit
 i18n
 Active Storage
 CD with Heroku
-CI with TravisCI and Coveralls
+CI with Semaphoreci and Coveralls
 
 ## Versioning
 
@@ -135,3 +140,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/paps/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/paps?branch=develop)
+
+[![Build Status](https://semaphoreci.com/api/v1/craftacademy/paps/branches/develop/badge.svg)](https://semaphoreci.com/craftacademy/paps)
