@@ -4,3 +4,6 @@
 = link_to 'New Article', new_article_path
 = link_to "Sign in", new_user_session_path
 = link_to "Log out", destroy_user_session_path, method: :delete
+
+- @article.each do |article|
+  %p= link_to "#{article.title}", article_path(article)
