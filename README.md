@@ -7,7 +7,7 @@ Week 8 Project of Craft Academy cohort January 2018.
 
 PapsNews is a News Agency Web Application used to share your local and international news directly on your device screen.  
 
-Once you land on the Homepage ```(https://....herokuapp.com/)```, you need to Signup in order to have access to the web contents
+Once you land on the Homepage ```(https://papnews.herokuapp.com/)```, you need to Signup in order to have access to the web contents
 (click on sign up in the navbar)
 
 README.md is updated daily during development of this project by our teams scrum master. Each day the scrum
