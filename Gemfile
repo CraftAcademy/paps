@@ -19,7 +19,6 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'launchy'
   gem 'pry-byebug'
