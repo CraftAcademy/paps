@@ -6,9 +6,10 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     if @article.save
       flash[:success] = "Article was successfully created."
-      redirect_to @article
+      redirect_to article_path(@article)
     else
       flash[:error] = "Field cannot be blank"
       render 'new'
@@ -22,6 +23,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params[:article].permit(:title, :content, :user_id)
+    params.require(:article).permit(:title, :content)
   end
 end

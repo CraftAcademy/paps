@@ -10,6 +10,10 @@ When("I fill in {string} with {string}") do |input, value|
   fill_in(input, with: value)
 end
 
+Then("I save and open page") do
+  save_and_open_page
+end
+
 When("I click {string} button") do |string|
   click_button string
 end
