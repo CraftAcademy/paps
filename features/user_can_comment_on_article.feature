@@ -7,9 +7,9 @@ Feature: Subscriber can comment on article
     Given  following article exists
     | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
+    And I am on the "A Whole New World" page
 
   Scenario: Successfully creates a comment on an article
-    Given I am on the "A Whole New World" page
     When I fill in "Email" with "antonella@email.com"
     And I fill in "Comment" with "This article is fun"
     And I click "Submit comment" button
@@ -17,7 +17,6 @@ Feature: Subscriber can comment on article
     And I should see "This article is fun"
 
   Scenario: User edits the article and leave content empty
-    Given I am on the "A Whole New World" page
     When I fill in "Email" with "antonella@email.com"
     And I fill in "Comment" with ""
     And I click "Submit comment" button
@@ -25,7 +24,6 @@ Feature: Subscriber can comment on article
     And I should see "Field cannot be blank."
 
   Scenario: User edits the article and leave email empty
-    Given I am on the "A Whole New World" page
     When I fill in "Email" with ""
     And I fill in "Comment" with "This article is fun"
     And I click "Submit comment" button
