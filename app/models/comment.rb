@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  validates :content, presence: true
+  validates_presence_of :content, :email
   belongs_to :article
 end

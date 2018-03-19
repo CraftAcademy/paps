@@ -23,3 +23,11 @@ Feature: Subscriber can comment on article
     And I click "Submit comment" button
     Then I should be on "A Whole New World" page
     And I should see "Field cannot be blank."
+
+  Scenario: User edits the article and leave email empty
+    Given I am on the "A Whole New World" page
+    When I fill in "Email" with ""
+    And I fill in "Comment" with "This article is fun"
+    And I click "Submit comment" button
+    Then I should be on "A Whole New World" page
+    And I should see "Field cannot be blank."
