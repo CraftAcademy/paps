@@ -3,6 +3,6 @@
   %script.stripe-button{ src: 'https://checkout.stripe.com/checkout.js',
     data: {amount: 1000,
     description: 'Subscribe to PAP\'s News',
-    -# key: "#{Rails.application.credentials.stripe[:stripe_app]}",
+    key: "#{Rails.application.credentials.stripe[:stripe_app]}",
     currency: 'sek',
     email: "#{current_user.email if current_user}"}}
