@@ -27,8 +27,8 @@ module Paps
       generate.system_tests false
     end
 
-    config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
-    config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
+    # config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
+    # config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
     config.stripe.endpoint = '/payment/stripe-integration'
   end
 end
