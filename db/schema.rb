@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2018_03_19_093819) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "email"
+    t.text "content"
+    t.bigint "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,4 +52,5 @@ ActiveRecord::Schema.define(version: 2018_03_19_093819) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "comments", "articles"
 end

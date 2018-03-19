@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :articles, only: [:new, :index, :create, :show]
+  resources :articles do
+    resources :comments, only: [:create, :new, :show]
+  end
 end
