@@ -8,7 +8,7 @@ RSpec.describe Article, type: :model do
 
   describe 'Factory' do
     it 'should have valid Factory' do
-      expect(create(:author)).to be_valid
+      expect(create(:user)).to be_valid
     end
   end
 
@@ -18,6 +18,6 @@ RSpec.describe Article, type: :model do
   end
 
   describe 'Associations' do
-    it { should belong_to :author }
+    it { should belong_to :user }
   end
 end
