@@ -10,6 +10,8 @@ Feature: Subscriber can comment on article
 
   Scenario: Successfully creates a comment on an article
     Given I am on the "A Whole New World" page
-    When I fill in "Comment" with "This article is fun"
+    When I fill in "Email" with "antonella@email.com"
+    And I fill in "Comment" with "This article is fun"
     And I click "Submit comment" button
-    Then I should see "This article is fun"
+    Then I should see "antonella@email.com"
+    And I should see "This article is fun"
