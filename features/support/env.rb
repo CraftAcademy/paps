@@ -1,6 +1,7 @@
-require 'cucumber/rails'
 require 'coveralls'
 Coveralls.wear_merged!('rails')
+
+require 'cucumber/rails'
 
 ActionController::Base.allow_rescue = false
 
@@ -12,4 +13,20 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-World(FactoryBot::Syntax::Methods)
+Chromedriver.set_version '2.36'
+
+
+Capybara.register_driver :selenium do  |app|
+  options = Selenium::WebDriver::Chrome::Options.new(
+      implicit_wait: 60,
+      args: %w(disable-popup-blocking disable-infobars),
+      binary: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome'
+  )
+
+  Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      options: options
+  )
+end
+Capybara.javascript_driver = :selenium
