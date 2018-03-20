@@ -15,10 +15,12 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Chromedriver.set_version '2.36'
 
-Capybara.register_driver :selenium do |app|
+
+Capybara.register_driver :selenium do  |app|
   options = Selenium::WebDriver::Chrome::Options.new(
       implicit_wait: 60,
-      args: %w( disable-popup-blocking disable-infobars)
+      args: %w(disable-popup-blocking disable-infobars),
+      binary: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome'
   )
 
   Capybara::Selenium::Driver.new(
