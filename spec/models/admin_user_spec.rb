@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe AdminUser, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'db table' do
+    it {is_expected.to have_db_column :email}
+    it {is_expected.to have_db_column :encrypted_password}
+  end
+
+  describe "Factory" do
+    it "should have a valid factory" do
+      expect(create(:user)).to be_valid
+    end
+  end
 end
