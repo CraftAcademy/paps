@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
 
   def create
-    binding.pry
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
     if @comment.save
