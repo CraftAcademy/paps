@@ -10,4 +10,7 @@ Feature: Admin login
     And I am on the Admin login page
 
   Scenario: Admin successfully logs in
-    When I
+    When I fill in "admin_user_email" with "admin@example.com"
+    And I fill in "admin_user_password" with "password"
+    Then I click submit
+    And I should be redirected to admin dashboard
