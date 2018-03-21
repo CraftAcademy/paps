@@ -1,3 +1,5 @@
+
+@javascript
 Feature: Categories articles based on location for users
   As a Editor
   In order to display content relevant to my subscribers
@@ -5,8 +7,8 @@ Feature: Categories articles based on location for users
 
 Background:
   Given the following user exists
-    | email           | password    | password_confirmation |
-    | harald@norge.no | OsloOslo123 | OsloOslo123           |
+    | email           | password    | latitude   | longitude |
+    | harald@norge.no | OsloOslo123 | 57.7       | 11.9      |
   And I am logged in as "harald@norge.no"
   And the following article exists
     | title               | content                       | latitude   | longitude |

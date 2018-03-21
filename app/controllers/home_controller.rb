@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
 
   def index
-    @articles = Article.all
+    @articles = Article.near(current_user.address, 20)
   end
 
   def current_user
