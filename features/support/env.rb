@@ -20,7 +20,7 @@ Capybara.register_driver :selenium do  |app|
   options = Selenium::WebDriver::Chrome::Options.new(
       implicit_wait: 60,
       args: %w(disable-popup-blocking disable-infobars),
-      binary: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome'
+      binary: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   )
 
   Capybara::Selenium::Driver.new(
