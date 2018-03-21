@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :get_coordinates, only: [:index]
 
-  
 
   def index
     @articles = Article.all
@@ -53,5 +53,23 @@ class ArticlesController < ApplicationController
 
   def article_params
     params[:article].permit(:title, :content)
+  end
+
+  def set_edition
+    if User.near([57.7,11.9], 100).include? current_user
+      @edition = 'Gothenburg Edition'
+    else
+      @edition = 'Rest of Sweden Edition'
+    end
+
+  def get_coordinates
+    @coordinates = {}
+    if cookies['geocoderLocation'].present?
+      @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash_symbolize_keys
+      set_edition
+      @geocoded = true
+    else
+      @geocoded = false
+    end
   end
 end
