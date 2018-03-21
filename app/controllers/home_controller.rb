@@ -18,10 +18,10 @@ class HomeController < ApplicationController
   end
 
   def get_coordinates
-    binding.pry
+
     @coordinates = {}
     if cookies['geocoderLocation'].present?
-      @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash_symbolize_keys
+      @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
       set_edition
       @geocoded = true
     else
