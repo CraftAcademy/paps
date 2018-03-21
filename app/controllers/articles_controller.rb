@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  
+
   def index
     @articles = Article.all
   end
@@ -44,6 +46,8 @@ class ArticlesController < ApplicationController
     flash[:success] = "Article successfully deleted."
     redirect_to root_path
   end
+
+
 
   private
 

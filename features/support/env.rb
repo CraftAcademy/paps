@@ -21,7 +21,6 @@ Capybara.register_driver :selenium do  |app|
       implicit_wait: 60,
       args: %w(disable-popup-blocking disable-infobars),
       binary: '/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome'
-      args: %w( headless disable-popup-blocking disable-infobars)
   )
 
   Capybara::Selenium::Driver.new(
