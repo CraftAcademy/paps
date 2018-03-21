@@ -6,7 +6,6 @@ class HomeController < ApplicationController
   end
 
   def current_user_location
-    binding.pry
-    @current_user_location = geocoded_by :full_street_address
+
   end
 end
