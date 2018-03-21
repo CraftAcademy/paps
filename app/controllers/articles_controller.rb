@@ -48,7 +48,6 @@ class ArticlesController < ApplicationController
   end
 
 
-
   private
 
   def article_params
@@ -61,6 +60,7 @@ class ArticlesController < ApplicationController
     else
       @edition = 'Rest of Sweden Edition'
     end
+  end
 
   def get_coordinates
     @coordinates = {}
