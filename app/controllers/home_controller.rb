@@ -2,11 +2,19 @@ class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
 
   def index
-     if cookies['geocoderLocation'].present? && Article.near(current_user.address, 20).any?
-       @articles = Article.near(current_user.address, 20)
+     if !@coordinates.empty?
+       user = create_guest_user
+       location = (current_user ? current_user.address : user.address)
+       @local_articles = Article.near(location, 20)
+       @articles = Article.all
      else
        @articles = Article.all
      end
+  end
+
+  def get_location
+    user = create_guest_user
+    current_user ? current_user.address : user.address
   end
 
   def set_edition
@@ -21,7 +29,7 @@ class HomeController < ApplicationController
     @coordinates = {}
     if cookies['geocoderLocation'].present?
       @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
-      update_current_user_location
+      update_user_location
       set_edition
       @geocoded = true
     else
@@ -29,10 +37,12 @@ class HomeController < ApplicationController
     end
   end
 
-  def update_current_user_location
-    current_user.latitude = @coordinates.values.first
-    current_user.longitude = @coordinates.values.second
-    current_user.save
+  def update_user_location
+    if current_user
+      current_user.latitude = @coordinates.values.first
+      current_user.longitude = @coordinates.values.second
+      current_user.save
+    end
   end
 
 end
