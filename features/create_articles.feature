@@ -4,11 +4,15 @@ Feature: Create articles
   I would like to be able to create articles
 
   Background:
-    Given I visit the Homepage
+    Given the following user exists
+      | email           | password    | password_confirmation |
+      | harald@norge.no | OsloOslo123 | OsloOslo123           |
+    And I am logged in as "harald@norge.no"
 
   Scenario: Successfully create an article
-    When I click "New Article" link
-    Then I fill in "Title" with "A Whole New World"
+    When I visit the site
+    Then I click "New Article" link
+    And I fill in "Title" with "A Whole New World"
     And I fill in "Content" with "A new fantastic point of view"
     And I click "Create Article" button
     Then I should be on "A Whole New World" page
@@ -18,14 +22,16 @@ Feature: Create articles
     Then I should be on article page
 
   Scenario: Failed to fill in content field
-    When I click "New Article" link
-    Then I fill in "Title" with "A Whole New World"
-    Then I fill in "Content" with " "
+    When I visit the site
+    Then I click "New Article" link
+    And I fill in "Title" with "A Whole New World"
+    And I fill in "Content" with " "
     And I click "Create Article" button
     Then I should be on article page
 
   Scenario: Failed to fill in title field
-    When I click "New Article" link
+    When I visit the site
+    Then I click "New Article" link
     Then I fill in "Title" with " "
     Then I fill in "Content" with "New content"
     And I click "Create Article" button
