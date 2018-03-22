@@ -7,14 +7,26 @@ Feature: Admin can add an article
   Given The following Admin exists
     | email               | password  |
     | admin@example.com   | password  |
-  And I'm logged in as the admin
-  And I go to the dashboard
+  Given I am on the Admin login page
+  Given I fill in "admin_user_email" with "admin@example.com"
+  Given I fill in "admin_user_password" with "password"
+  Given I click submit
+
 
   Scenario: Admin successfully adds an article
     When I click dashboard link Articles
-    And I click article link "Create one"
-    Then I should be on "new_admin_article_path" page
-    And I fill in field article_title
-    And I fill in field article_content
+    And I click admin article page link "Create one"
+    Then I should be on "new_admin_article_path" dashboard page
+    And I fill in field "article_title" with "string"
+    And I fill in field "article_content" with "string"
     And I click article link "Create Article"
     Then I should see "Article was successfully created."
+
+  Scenario: Admin fails to fill in field
+    When I click dashboard link Articles
+    And I click admin article page link "Create one"
+    Then I should be on "new_admin_article_path" dashboard page
+    And I fill in field "article_title" with " "
+    And I fill in field "article_content" with "string"
+    And I click article link "Create Article"
+    Then I should see "can't be blank"

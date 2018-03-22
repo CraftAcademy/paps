@@ -4,30 +4,22 @@ Given("The following Admin exists") do |table|
   end
 end
 
-Given("I'm logged in as the admin") do
-  login_as @admin, scope: :admin_user
-end
-
-Given("I go to the dashboard") do
-  visit admin_dashboard_path
-end
-
 When("I click dashboard link Articles") do
-  find_link('Articles').click
+  click_link('Articles')
 end
 
-When("I click article link {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click admin article page link {string}") do |string|
+  click_link('Create one')
 end
 
-Then("I fill in field article_title") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I should be on {string} dashboard page") do |string|
+  visit new_admin_article_path # Write code here that turns the phrase above into concrete actions
 end
 
-Then("I fill in field article_content") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I fill in field {string} with {string}") do |field, value|
+  fill_in(field, with: value)
 end
 
 Then("I click article link {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link_or_button string # Write code here that turns the phrase above into concrete actions
 end
