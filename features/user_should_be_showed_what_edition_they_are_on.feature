@@ -20,6 +20,6 @@ Background:
     Then I should see "Rest of Sweden Edition"
 
   Scenario: User is in Gothenburg
-    Given I am at latitude: 57.700501, longitude: 11.975463 
+    Given I am at latitude: 57.700501, longitude: 11.975463
     And I visit the site
     Then I should see "Welcome Gothenburg Edition"
