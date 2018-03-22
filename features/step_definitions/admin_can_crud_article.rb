@@ -6,7 +6,7 @@ end
 
 Given("The following Article exists") do |table|
   table.hashes.each do |article|
-    FactoryBot.create(:article, article)
+    FactoryBot.create(:article)
   end
 end
 
@@ -15,7 +15,7 @@ When("I click dashboard link Articles") do
 end
 
 When("I click admin article page link {string}") do |string|
-  click_link('New Article')
+  click_link(string)
 end
 
 Then("I should be on {string} dashboard page") do |string|
@@ -30,14 +30,10 @@ Then("I click article link {string}") do |string|
   click_link_or_button string
 end
 
-When("I save and open page") do
-  save_and_open_page
-end
-
 Then("I click article update button {string}") do |string|
   click_link_or_button string
 end
 
-Then("I should be redirected to edit_admin_article_path") do
+Then("I should be redirected to article edit page") do
   visit edit_admin_article_path
 end

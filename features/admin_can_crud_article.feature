@@ -9,7 +9,7 @@ Feature: Admin can add an article
     | admin@example.com   | password  |
   Given The following Article exists
     | title               | content   |
-    | string            | string    |
+    | MyString            | MyText    |
   Given I am on the Admin login page
   Given I fill in "admin_user_email" with "admin@example.com"
   Given I fill in "admin_user_password" with "password"
@@ -35,11 +35,13 @@ Feature: Admin can add an article
 
   Scenario: Admin successfully edits an article
     When I click dashboard link Articles
-    And I save and open page
     And I click admin article page link "Edit"
-    Then I should be on "edit_admin_article_path" dashboard page
-    # Then I should be redirected to edit_admin_article_path
     And I fill in field "article_title" with "string"
     And I fill in field "article_content" with "string1"
     And I click article update button "Update Article"
     Then I should see "Article was successfully updated."
+
+  Scenario: Admin successfully deletes an article
+    When I click dashboard link Articles
+    And I click admin article page link "Delete"
+    And I should see "Article was successfully destroyed."
