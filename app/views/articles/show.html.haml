@@ -3,7 +3,10 @@
   = @article.title
 %p
   %strong Author:
-  =@article.user.email
+  - if @article.user
+    = @article.user.email
+  - else
+    = "Anonymous"
 %p
   %strong Text:
   = @article.content
