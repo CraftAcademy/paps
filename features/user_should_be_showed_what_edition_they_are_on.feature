@@ -7,8 +7,8 @@ Feature: User is informed about his location
 Background:
   Given the following article exists
     | title               | content                       | latitude   | longitude |
-    | A Whole New World   | A new fantastic point of view | 57.7       | 11.9      |
-    | A Whole New Article | A new fantastic article       | 59.3       | 18.1      |
+    | A Whole New World   | A new fantastic point of view | 57.700501  | 11.975463 |
+    | A Whole New Article | A new fantastic article       | 59.3345    | 18.0632   |
   And the following user exists
     | email           | password    | latitude   | longitude |
     | haral@norge.no | OsloOslo123  | 59.334591  | 18.063240 |
@@ -20,6 +20,6 @@ Background:
     Then I should see "Rest of Sweden Edition"
 
   Scenario: User is in Gothenburg
-    Given I am at latitude: 57.1, longitude: 11.9
+    Given I am at latitude: 57.700501, longitude: 11.975463 
     And I visit the site
     Then I should see "Welcome Gothenburg Edition"
