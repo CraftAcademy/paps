@@ -1,11 +1,15 @@
-%h1 Welcome
-
-= link_to "Sign up", new_user_registration_path
-= link_to 'New Article', new_article_path
-= link_to "Sign in", new_user_session_path
-= link_to "Log out", destroy_user_session_path, method: :delete
-= link_to "Pay with Card", new_subscription_path
+!!!
+%html
+%body
+  %h1 Welcome to PAPs NEWS
+  %h2 Spread the knowledge!
 
 - @articles.each do |article|
   %p= link_to "#{article.title}", article_path(article)
   %p= sanitize(truncate(article.content, length: 150))
+
+.footer
+  %h2 Contacts
+  %br/
+  %p icons go here
+  %br/
