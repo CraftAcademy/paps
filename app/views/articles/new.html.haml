@@ -9,3 +9,7 @@
     = form.text_area :content, id: :article_content
   %p
     = form.submit value: "Create Article"
+  %p
+    = form.label :categories
+    %br/
+    = form.select(:categories, Category.all.collect{|category| [category.name, category.id] }, {}, {multipe: true, id: 'categories'})

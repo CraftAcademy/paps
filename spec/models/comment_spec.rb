@@ -13,8 +13,8 @@ RSpec.describe Comment, type: :model do
 
   describe "Factory" do
     it "should have a valid factory" do
-      article = FactoryBot.create(:article)
-      expect(FactoryBot.create(:comment, article: article)).to be_valid
+      article = create(:article)
+      expect(create(:comment, article: article)).to be_valid
     end
   end
 end

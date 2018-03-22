@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    add_categories_to_article
     if @article.save
       flash[:success] = "Article was successfully created."
       redirect_to @article
@@ -46,6 +47,17 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def add_categories_to_article
+    binding.pry
+    categories = []
+    categories << params[:article][:categories]
+    categories.each do |category_id|
+      category = Category.find_by(id: category_id)
+      @article.categories.include?(category) ? next : @article.categories << category
+    end
+    binding.pry
+  end
 
   def article_params
     params[:article].permit(:title, :content)
