@@ -13,7 +13,7 @@ When("I click admin article page link {string}") do |string|
 end
 
 Then("I should be on {string} dashboard page") do |string|
-  visit new_admin_article_path # Write code here that turns the phrase above into concrete actions
+  visit new_admin_article_path
 end
 
 Then("I fill in field {string} with {string}") do |field, value|
@@ -21,5 +21,5 @@ Then("I fill in field {string} with {string}") do |field, value|
 end
 
 Then("I click article link {string}") do |string|
-  click_link_or_button string # Write code here that turns the phrase above into concrete actions
+  click_link_or_button string
 end
