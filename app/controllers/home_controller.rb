@@ -10,9 +10,7 @@ class HomeController < ApplicationController
 
   end
 
-  def current_user
-     super || create_guest_user
-  end
+
 
   def set_edition
     if User.near([57.700501, 11.975463], 50).include? current_user
@@ -32,13 +30,6 @@ class HomeController < ApplicationController
     else
       @geocoded = false
     end
-  end
-
-  def create_guest_user
-    token = SecureRandom.base64(15)
-    user = User.new({password: token, email: "#{token}@example.com"}.merge!(@coordinates))
-    user.save(validate: false)
-    user
   end
 
   def update_current_user_location

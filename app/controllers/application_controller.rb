@@ -1,9 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  def user_not_authorized
-      redirect_to root_path, notice: 'You are not authorized to perform that action!'
-    end
-
     def current_user
       super || create_guest_user
     end
