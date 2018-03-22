@@ -30,10 +30,6 @@ Then("I click article link {string}") do |string|
   click_link_or_button string
 end
 
-Then("I click article update button {string}") do |string|
-  click_link_or_button string
-end
-
 Then("I should be redirected to article edit page") do
   visit edit_admin_article_path
 end

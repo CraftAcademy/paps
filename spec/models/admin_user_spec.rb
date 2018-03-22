@@ -8,7 +8,7 @@ RSpec.describe AdminUser, type: :model do
 
   describe "Factory" do
     it "should have a valid factory" do
-      expect(create(:user)).to be_valid
+      expect(create(:admin_user)).to be_valid
     end
   end
 end

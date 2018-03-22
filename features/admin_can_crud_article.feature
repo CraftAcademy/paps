@@ -4,16 +4,16 @@ Feature: Admin can add an article
   I would like to get CRUD access on my dashboard
 
   Background:
-  Given The following Admin exists
-    | email               | password  |
-    | admin@example.com   | password  |
-  Given The following Article exists
-    | title               | content   |
-    | MyString            | MyText    |
-  Given I am on the Admin login page
-  Given I fill in "admin_user_email" with "admin@example.com"
-  Given I fill in "admin_user_password" with "password"
-  Given I click submit
+    Given The following Admin exists
+      | email               | password  |
+      | admin@example.com   | password  |
+    Given The following Article exists
+      | title               | content   |
+      | MyString            | MyText    |
+    Given I am on the Admin login page
+    Given I fill in "admin_user_email" with "admin@example.com"
+    Given I fill in "admin_user_password" with "password"
+    Given I click submit
 
   Scenario: Admin successfully adds an article
     When I click dashboard link Articles
@@ -38,7 +38,7 @@ Feature: Admin can add an article
     And I click admin article page link "Edit"
     And I fill in field "article_title" with "string"
     And I fill in field "article_content" with "string1"
-    And I click article update button "Update Article"
+    And I click article link "Update Article"
     Then I should see "Article was successfully updated."
 
   Scenario: Admin successfully deletes an article
