@@ -18,8 +18,10 @@ Feature: Categories articles based on location for users
 
   Scenario: User visit site and should see articles regarding Göteborg
     Given I visit the site
-    Then I should see "A Whole New World"
-    And I should not see message "A Whole New Article"
+    Then I should see "Local Articles"
+    And I should see "A Whole New World"
+    And I should see "All Articles"
+    And I should see "A Whole New Article"
 
   Scenario: User is in Zurich
     Given I am at latitude: 47.3769, longitude: 8.5417
