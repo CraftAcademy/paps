@@ -4,13 +4,22 @@ Feature: User is informed about his location
   In order to get localized news
   I would like the application to know where I am
 
+Background:
+  Given the following article exists
+    | title               | content                       | latitude   | longitude |
+    | A Whole New World   | A new fantastic point of view | 57.7       | 11.9      |
+    | A Whole New Article | A new fantastic article       | 59.3       | 18.1      |
+  And the following user exists
+    | email           | password    | latitude   | longitude |
+    | haral@norge.no | OsloOslo123  | 59.334591  | 18.063240 |
+  And I am logged in as "haral@norge.no"
+
   Scenario: User is in Sweden
-    Given I am at latitude: "59.334591", longitude: "18.063240"
+    Given I am at latitude: 59.33, longitude: 18.06
     And I visit the site
     Then I should see "Rest of Sweden Edition"
 
-
   Scenario: User is in Gothenburg
-    Given I am at latitude: "57.1", longitude: "11.9"
+    Given I am at latitude: 57.1, longitude: 11.9
     And I visit the site
     Then I should see "Welcome Gothenburg Edition"

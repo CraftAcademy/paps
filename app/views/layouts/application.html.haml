@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-  - if Rails.env.test?
-    = tag.meta id: :fake_position, content: fake_location
+    - if Rails.env.test?
+      = tag.meta id: :fake_position, content: fake_location
 
     %meta{content: "text/html; charset=UTF-8", http: {equiv: "Content-Type"}}
     %title Paps

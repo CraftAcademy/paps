@@ -9,7 +9,6 @@ Background:
   Given the following user exists
     | email           | password    | latitude   | longitude |
     | harald@norge.no | OsloOslo123 | 57.7       | 11.9      |
-  And I am logged in as "harald@norge.no"
   And the following article exists
     | title               | content                       | latitude   | longitude |
     | A Whole New World   | A new fantastic point of view | 57.7       | 11.9      |
