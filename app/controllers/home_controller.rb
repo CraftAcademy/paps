@@ -2,15 +2,12 @@ class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
 
   def index
-       if cookies['geocoderLocation'].present? && Article.near(current_user.address, 20) != nil
-         @articles = Article.near(current_user.address, 20)
-       else
-         @articles = Article.all
-       end
-
+     if cookies['geocoderLocation'].present? && Article.near(current_user.address, 20).any?
+       @articles = Article.near(current_user.address, 20)
+     else
+       @articles = Article.all
+     end
   end
-
-
 
   def set_edition
     if User.near([57.700501, 11.975463], 50).include? current_user
