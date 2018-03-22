@@ -13,6 +13,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Associations' do
-    it { should have_many :articles }
+    it { is_expected.to have_many :articles }
   end
 end

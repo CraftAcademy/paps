@@ -18,6 +18,6 @@ RSpec.describe Article, type: :model do
   end
 
   describe 'Associations' do
-    it { should belong_to :user }
+    it { is_expected.to belong_to :user }
   end
 end

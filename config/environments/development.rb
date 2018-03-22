@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.require_master_key = true
 
   config.cache_classes = false
   config.eager_load = false
