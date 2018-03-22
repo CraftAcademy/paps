@@ -42,6 +42,7 @@ class HomeController < ApplicationController
   end
 
   def update_current_user_location
+    binding.pry
     current_user.latitude = @coordinates.values.first
     current_user.longitude = @coordinates.values.second
     current_user.save
