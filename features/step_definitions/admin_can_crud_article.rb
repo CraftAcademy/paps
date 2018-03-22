@@ -11,7 +11,7 @@ Given("The following Article exists") do |table|
 end
 
 When("I click dashboard link Articles") do
-  click_link('Articles')
+  click_link("Articles")
 end
 
 When("I click admin article page link {string}") do |string|
