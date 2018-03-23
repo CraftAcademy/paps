@@ -4,7 +4,7 @@ Feature: Edit articles
   I would like to be able to edit articles
 
   Background:
-    Given  following article exists
+    Given the following article exists
     | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
 
