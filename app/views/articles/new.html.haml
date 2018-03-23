@@ -12,4 +12,4 @@
   %p
     = form.label :categories
     %br/
-    = form.select(:categories, Category.all.collect{|category| [category.name, category.id] }, {}, {multipe: true, id: 'categories'})
+    = form.select(:categories, Category.all.collect {|category| [category.name, category.id] }, {}, {multipe: true, id: 'categories'})

@@ -3,8 +3,6 @@ Feature: Better orginized websitet with categories
   In order to be able to find content of interest
   I would like to be able to filter articles by category
 
-
-
 Background:
   Given following article exists
     | title               | content                       |
@@ -15,6 +13,7 @@ Background:
   And the following categories exists
     | name    |
     | Fashion |
+    | Tech    |
   And I am logged in as "harald@norge.no"
 
 Scenario: User creates a new article and asign it to a category
@@ -22,6 +21,7 @@ Scenario: User creates a new article and asign it to a category
   Then I fill in "Title" with "A Whole New Article"
   And I fill in "Content" with "A new fantastic Article"
   And I select "Fashion" from "categories"
+  And I select "Tech" from "categories"
   When I click "Create Article" button
   Then I should be on "A Whole New Article" page
   And I should see "A Whole New Article"

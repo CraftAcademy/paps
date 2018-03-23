@@ -48,15 +48,19 @@ class ArticlesController < ApplicationController
 
   private
 
+  def find_articles_and_categories
+      @article = Article.find(params[:id])
+      @categories = Category.all
+  end
+
   def add_categories_to_article
-    binding.pry
     categories = []
     categories << params[:article][:categories]
+
     categories.each do |category_id|
       category = Category.find_by(id: category_id)
       @article.categories.include?(category) ? next : @article.categories << category
     end
-    binding.pry
   end
 
   def article_params
