@@ -1,14 +1,19 @@
 !!!
 %html
   %head
+    - if Rails.env.test?
+      = tag.meta id: :fake_position, content: fake_location
+
     %meta{content: "text/html; charset=UTF-8", http: {equiv: "Content-Type"}}
     %link{:href => "https://fonts.googleapis.com/css?family=Limelight", :rel => "stylesheet"}
     %title Paps
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    =render 'partials/navbar'
+  %body{'data-env': "#{Rails.env}", "data-geocoded": "#{@geocoded}"}
     - flash.each do |key, value|
       %div{class: "alert alert-#{key}"}= value
+  #container
+    = link_to_unless_current "English", locale: "en"
+    = link_to_unless_current "Svenska", locale: "sv"
     = yield
