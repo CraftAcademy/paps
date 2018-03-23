@@ -16,7 +16,7 @@ Feature: Admin can add an article
     Given I click submit
 
   Scenario: Admin successfully adds an article
-    When I click dashboard link Articles
+    When I click Articles link
     And I click admin article page link "New Article"
     Then I should be on "new_admin_article_path" dashboard page
     And I fill in field "article_title" with "string"
@@ -25,7 +25,7 @@ Feature: Admin can add an article
     Then I should see "Article was successfully created."
 
   Scenario: Admin fails to fill in field
-    When I click dashboard link Articles
+    When I click Articles link
     And I click admin article page link "New Article"
     Then I should be on "new_admin_article_path" dashboard page
     And I fill in field "article_title" with " "
@@ -34,7 +34,7 @@ Feature: Admin can add an article
     Then I should see "can't be blank"
 
   Scenario: Admin successfully edits an article
-    When I click dashboard link Articles
+    When I click Articles link
     And I click admin article page link "Edit"
     And I fill in field "article_title" with "string"
     And I fill in field "article_content" with "string1"
@@ -42,6 +42,6 @@ Feature: Admin can add an article
     Then I should see "Article was successfully updated."
 
   Scenario: Admin successfully deletes an article
-    When I click dashboard link Articles
+    When I click Articles link
     And I click admin article page link "Delete"
     And I should see "Article was successfully destroyed."

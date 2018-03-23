@@ -10,7 +10,7 @@ Given("The following Article exists") do |table|
   end
 end
 
-When("I click dashboard link Articles") do
+When("I click Articles link") do
   click_link("Articles")
 end
 
