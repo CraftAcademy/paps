@@ -8,11 +8,16 @@
 - if @local_articles
   %h3 Local Articles
   - @local_articles.each do |article|
-    %p= link_to "#{article.title}", article_path(article)
+    %h3= link_to "#{article.title}", article_path(article)
     %p= sanitize(truncate(article.content, length: 150))
 
 - if @articles
   %h3 All Articles
   - @articles.each do |article|
-    %p= link_to "#{article.title}", article_path(article)
+    %h3= link_to "#{article.title}", article_path(article)
     %p= sanitize(truncate(article.content, length: 150))
+
+- if @categories
+  %h3 Categories
+  - @categories.each do |category|
+    %p= link_to "#{category.name}", category_path(category)
