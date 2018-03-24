@@ -14,8 +14,8 @@ When("I click Articles link") do
   click_link("Articles")
 end
 
-When("I click admin article page link {string}") do |string|
-  click_link(string)
+When("I click admin article page link {string}") do |article|
+  click_link(article)
 end
 
 Then("I should be on {string} dashboard page") do |string|
@@ -26,8 +26,8 @@ Then("I fill in field {string} with {string}") do |field, value|
   fill_in(field.underscore, with: value.underscore)
 end
 
-Then("I click article link {string}") do |string|
-  click_link_or_button string
+Then("I click article link {string}") do |create|
+  click_link_or_button create
 end
 
 Then("I should be redirected to article edit page") do
