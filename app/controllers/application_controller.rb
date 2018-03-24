@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  before_action :set_locale
 
     def current_user
       super || create_guest_user
@@ -10,5 +12,11 @@ class ApplicationController < ActionController::Base
       user.address = Geocoder.address([@coordinates.values.first, @coordinates.values.second])
       user.save(validate: false)
       user
+    end
+
+    private
+
+    def set_locale
+      I18n.locale = params[:locale]
     end
 end
