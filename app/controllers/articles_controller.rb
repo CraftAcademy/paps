@@ -1,8 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :find_articles_and_categories, only: [:show, :update, :edit, :destroy]
-  def index
-    @articles = Article.all
-  end
 
   def new
     @article = Article.new
