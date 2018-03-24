@@ -2,6 +2,10 @@ Given("I visit the Homepage") do
   visit root_path
 end
 
+Given("show me the page") do
+  save_and_open_page
+end
+
 When("I click {string} link") do |string|
   click_link_or_button string
 end

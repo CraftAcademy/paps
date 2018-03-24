@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def index
     @articles = Article.all
   end
@@ -66,4 +65,5 @@ class ArticlesController < ApplicationController
   def article_params
     params[:article].permit(:title, :content)
   end
+
 end
