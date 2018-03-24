@@ -1,0 +1,18 @@
+sv:
+  header:
+    main: VÄLKOMMEN!
+    second: ◊ Sprid nyheterna ◊
+  signup:
+    main: Registrera
+  newarticle:
+    main: Ny Artikel
+  signin:
+    main: Logga in
+  logout:
+    main: Logga ut
+  pay:
+    main: Kortbetalning
+  localarticles:
+    main: Lokala Artiklar
+  allarticles:
+    main: Alla Artiklar

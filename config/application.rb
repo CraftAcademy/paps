@@ -30,5 +30,6 @@ module Paps
     config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
     config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
     config.stripe.endpoint = '/payment/stripe-integration'
+    config.i18n.default_locale = :sv
   end
 end

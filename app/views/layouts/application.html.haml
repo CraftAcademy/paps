@@ -12,4 +12,7 @@
   %body{'data-env': "#{Rails.env}", "data-geocoded": "#{@geocoded}"}
     - flash.each do |key, value|
       %div{class: "alert alert-#{key}"}= value
+  #container
+    = link_to_unless_current "English", locale: "en"
+    = link_to_unless_current "Svenska", locale: "sv"
     = yield
