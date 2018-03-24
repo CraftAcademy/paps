@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :find_articles_and_categories, only: [:show, :update, :edit, :destroy]
   def index
     @articles = Article.all
   end
@@ -19,12 +20,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    @article = Article.find(params[:id])
-  end
-
   def update
-    @article = Article.find(params[:id])
     if @article.update_attributes(article_params)
       flash[:success] = 'Article successfully updated.'
       redirect_to @article
@@ -34,12 +30,7 @@ class ArticlesController < ApplicationController
      end
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
-
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     flash[:success] = "Article successfully deleted."
     redirect_to root_path
@@ -48,17 +39,15 @@ class ArticlesController < ApplicationController
   private
 
   def find_articles_and_categories
-      @article = Article.find(params[:id])
-      @categories = Category.all
+    @article = Article.find(params[:id])
+    @categories = Category.all
   end
 
   def add_categories_to_article
-    categories = []
-    categories << params[:article][:categories]
-
-    categories.each do |category_id|
+    if !params[:article][:categories].nil?
+      category_id = params[:article][:categories]
       category = Category.find_by(id: category_id)
-      @article.categories.include?(category) ? next : @article.categories << category
+      @article.categories << category unless @article.categories.include?(category)
     end
   end
 

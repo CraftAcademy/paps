@@ -4,7 +4,7 @@ Feature: Better orginized websitet with categories
   I would like to be able to filter articles by category
 
 Background:
-  Given following article exists
+  Given the following article exists
     | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
   And the following user exists
@@ -20,10 +20,9 @@ Scenario: User creates a new article and asign it to a category
   Given I am on the Create Article page
   Then I fill in "Title" with "A Whole New Article"
   And I fill in "Content" with "A new fantastic Article"
-  And I select "Fashion" from "categories"
   And I select "Tech" from "categories"
   When I click "Create Article" button
   Then I should be on "A Whole New Article" page
   And I should see "A Whole New Article"
   And I should see "A new fantastic Article"
-  And I should see "Fashion"
+  And I should see "Tech"
