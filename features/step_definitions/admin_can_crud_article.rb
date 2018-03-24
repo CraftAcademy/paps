@@ -23,7 +23,7 @@ Then("I should be on {string} dashboard page") do |string|
 end
 
 Then("I fill in field {string} with {string}") do |field, value|
-  fill_in(field, with: value)
+  fill_in(field.underscore, with: value.underscore)
 end
 
 Then("I click article link {string}") do |string|
