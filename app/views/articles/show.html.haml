@@ -2,6 +2,12 @@
   %strong Title:
   = @article.title
 %p
+  %strong Author:
+  - if @article.user
+    = @article.user.email
+  - else
+    = "Anonymous"
+%p
   %strong Text:
   = @article.content
 

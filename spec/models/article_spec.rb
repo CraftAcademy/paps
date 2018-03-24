@@ -19,4 +19,8 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :content }
   end
+
+  describe 'Associations' do
+    it { is_expected.to belong_to :user }
+  end
 end

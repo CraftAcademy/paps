@@ -3,5 +3,7 @@ class Article < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   
   validates :title, :content, presence: true
+
+  belongs_to :user, optional: true
   has_many :comments, dependent: :destroy
 end

@@ -5,6 +5,10 @@ Feature: Create articles
 
   Background:
     Given I visit the Homepage
+    Given the following user exists
+      | email           | password    | password_confirmation |
+      | harald@norge.no | OsloOslo123 | OsloOslo123           |
+    And I am logged in as "harald@norge.no"
 
   Scenario: Successfully create an article
     When I click "New Article" link
