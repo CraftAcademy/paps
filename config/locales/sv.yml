@@ -12,3 +12,7 @@ sv:
     main: Logga ut
   pay:
     main: Kortbetalning
+  localarticles:
+    main: Lokala Artiklar
+  allarticles:
+    main: Alla Artiklar

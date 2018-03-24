@@ -12,3 +12,7 @@ en:
     main: Logout
   pay:
     main: Pay with card
+  localarticles:
+    main: Local Articles
+  allarticles:
+    main: All Articles
