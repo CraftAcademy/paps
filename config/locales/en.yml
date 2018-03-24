@@ -3,4 +3,12 @@ en:
     main: WELCOME!
     second: ◊ Spread the news ◊
   signup:
-    main: Sign up
+    main: Sign Up
+  newarticle:
+    main: New Article
+  signin:
+    main: Sign In
+  logout:
+    main: Logout
+  pay:
+    main: Pay with card
