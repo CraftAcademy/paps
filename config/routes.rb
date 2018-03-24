@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :new, :show]
   end
+
+  scope '(:locale)', locale: /en|sv/ do
+    #Point your 'root_path' to whatever controller and action you want
+    root controller: :home, action: :index
+  end
 end
