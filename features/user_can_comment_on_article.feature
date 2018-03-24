@@ -4,7 +4,7 @@ Feature: Subscriber can comment on article
   I would like to be able to leave a comment
 
   Background:
-    Given  following article exists
+    Given the following article exists
     | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
     And I am on the "A Whole New World" page

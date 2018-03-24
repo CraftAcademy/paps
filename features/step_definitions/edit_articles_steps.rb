@@ -1,4 +1,4 @@
-Given("following article exists") do |table|
+Given("the following article exists") do |table|
   table.hashes.each do |article|
     FactoryBot.create(:article, article)
   end
