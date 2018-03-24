@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   describe "Factory" do
     it "should have a valid factory" do
-      article = create(:category)
       expect(create(:category)).to be_valid
     end
   end
