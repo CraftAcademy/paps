@@ -1,11 +1,12 @@
-%p
-  %strong Title:
+%h3
+  %strong
   = @article.title
 %p
-  %strong Text:
+  %strong
   = @article.content
 
 %article
+%h2 Wanna leave a comment?
 - @article.comments.each do |comment|
   %p= "Commented by: #{comment.email}"
   %p= comment.content
