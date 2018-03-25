@@ -4,6 +4,7 @@ FactoryBot.define do
     content "MyText"
     latitude 1.0
     longitude 2.6
-    address "pontus 1" 
+    address "pontus 1"
+    categories {[create(:category)]}
   end
 end

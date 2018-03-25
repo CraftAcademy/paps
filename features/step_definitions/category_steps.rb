@@ -17,7 +17,7 @@ Given("I am on the Create Article page") do
 end
 
 Then("I select {string} from {string}") do |category, select_box|
-  select(category, from: select_box)
+  select category, from: select_box
 end
 
 Then("I should be on the {string} page") do |category_name|

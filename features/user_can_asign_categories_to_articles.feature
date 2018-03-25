@@ -4,16 +4,15 @@ Feature: Better orginized websitet with categories
   I would like to be able to filter articles by category
 
 Background:
-  Given the following article exists
-    | title               | content                       |
-    | A Whole New World   | A new fantastic point of view |
-  And the following user exists
+  Given the following user exists
     | email           | password    |
     | harald@norge.no | OsloOslo123 |
+
   And the following categories exists
     | name    |
     | Fashion |
     | Tech    |
+    
   And I am logged in as "harald@norge.no"
 
 Scenario: User creates a new article and asign it to a category
