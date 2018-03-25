@@ -2,7 +2,7 @@
 %html
 %body
   %h1 Welcome to PAPs NEWS
-  %h2 Spread the knowledge!
+  %h2 Articles 
 
 - @articles.each do |article|
   %p= link_to "#{article.title}", article_path(article)
