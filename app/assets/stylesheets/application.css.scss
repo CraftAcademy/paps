@@ -81,5 +81,12 @@ input, button, select, optgroup, textarea {
 }
 
 .div {
-  padding: 3%;
+  padding: 10%;
+}
+
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Limelight', cursive;
 }
