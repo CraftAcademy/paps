@@ -8,10 +8,12 @@ Background:
     | name    |
     | Fashion |
     | Tech    |
+
   And the following article exists
     | title               | content                       |
     | A Whole New World   | A new fantastic point of view |
     | A Whole New Article | A new fantastic article       |
+    
   And the following article are assigned to categories
     | title                 |  category   |
     | A Whole New World     |  Fashion    |
