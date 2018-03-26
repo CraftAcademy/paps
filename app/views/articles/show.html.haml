@@ -16,6 +16,8 @@
   = form.text_area :content, cols: 50, rows: 5, id: 'comment_content'
   %p= form.submit 'Submit comment'
 
+- @article.categories.each do |category|
+  %p= category.name
 %p
   = link_to 'Edit Article', edit_article_path(@article)
   = link_to 'Delete Article', article_path(@article), method: :delete

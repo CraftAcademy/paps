@@ -1,6 +1,6 @@
 Given("the following article exists") do |table|
   table.hashes.each do |article|
-    FactoryBot.create(:article, article)
+    create(:article, article)
   end
 end
 

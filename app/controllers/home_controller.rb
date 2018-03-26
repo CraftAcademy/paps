@@ -2,14 +2,13 @@ class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
 
   def index
-     if !@coordinates.empty?
-       user = create_guest_user
-       location = (current_user ? current_user.address : user.address)
-       @local_articles = Article.near(location, 20)
-       @articles = Article.all
-     else
-       @articles = Article.all
-     end
+    if !@coordinates.empty?
+     user = create_guest_user
+     location = (current_user ? current_user.address : user.address)
+     @local_articles = Article.near(location, 20)
+    end
+    @articles = Article.all
+    @categories = Category.all
   end
 
   def get_location
@@ -44,5 +43,4 @@ class HomeController < ApplicationController
       current_user.save
     end
   end
-
 end

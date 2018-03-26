@@ -12,7 +12,7 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
-
+World(FactoryBot::Syntax::Methods)
 Chromedriver.set_version '2.36'
 
 

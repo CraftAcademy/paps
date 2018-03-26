@@ -11,7 +11,7 @@ When("I click {string} link") do |string|
 end
 
 Then("I fill in {string} with {string}") do |input, value|
-  fill_in(input, with: value)
+  fill_in input, with: value
 end
 
 And("I click {string} button") do |string|

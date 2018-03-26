@@ -1,0 +1,6 @@
+%h1= @category.name
+
+- if @category.articles
+  - @category.articles.each do |article|
+    %h3= article.title
+    %p= article.content

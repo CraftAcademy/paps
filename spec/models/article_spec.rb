@@ -15,8 +15,13 @@ RSpec.describe Article, type: :model do
     end
   end
 
+  describe "Assosiation" do
+    it {is_expected.to have_and_belong_to_many :categories}
+  end
+
   describe 'Validations' do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :content }
+    it { is_expected.to validate_presence_of :categories }
   end
 end
