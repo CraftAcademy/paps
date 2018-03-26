@@ -1,7 +1,7 @@
 class Api::V1::ArticlesController < ApplicationController
+respond_to :json
   def index
-    article = Article.all
-    binding.pry
-    render json: {data: "#{article}"}
+    @articles = Article.all
+    respond_with @articles
   end
 end
