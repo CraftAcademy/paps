@@ -1,15 +1,23 @@
 class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
-  GOTHENBURG = [57.700501, 11.975463]
 
   def index
-   @local_articles = Article.near(current_user.address, 20) if !@coordinates.empty?
-   @articles = Article.all
-   @categories = Category.all 
+    if !@coordinates.empty?
+     user = create_guest_user
+     location = (current_user ? current_user.address : user.address)
+     @local_articles = Article.near(location, 20)
+    end
+    @articles = Article.all
+    @categories = Category.all
+  end
+
+  def get_location
+    user = create_guest_user
+    current_user ? current_user.address : user.address
   end
 
   def set_edition
-    if User.near(GOTHENBURG, 50).include? current_user
+    if User.near([57.700501, 11.975463], 50).include? current_user
       @edition = 'Gothenburg Edition'
     else
       @edition = 'Rest of Sweden Edition'
@@ -29,8 +37,10 @@ class HomeController < ApplicationController
   end
 
   def update_user_location
-    current_user.latitude = @coordinates.values.first
-    current_user.longitude = @coordinates.values.second
-    current_user.save
+    if current_user
+      current_user.latitude = @coordinates.values.first
+      current_user.longitude = @coordinates.values.second
+      current_user.save
+    end
   end
 end
