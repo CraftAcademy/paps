@@ -15,8 +15,12 @@ gem 'stripe-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'rack-cors', require: 'rack/cors'
-gem 'jbuilder'
 gem 'active_model_serializers', '~> 0.10.0'
+
+
+group :test do
+  gem 'jsonapi-rspec'
+end
 
 group :development, :test do
   gem 'chromedriver-helper'
