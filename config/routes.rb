@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :pings, only: [:index], constraints: { format: 'json' }
     end
     namespace :v1 do
-      resources :articles, only: [:index], constraints: { format: 'json' } 
+      resources :articles, only: [:index, :show], constraints: { format: 'json' } 
     end
   end
 end

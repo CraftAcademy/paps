@@ -18,6 +18,9 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       expect(object).to have_attribute 'comments'
     end
 
+    it 'has a link' do
+      expect(object).to have_attribute(:link).with_value("/api/v1/articles/#{article.id}")
+    end
 
     %w(title content).each do |attr|
       it "has #{attr} attribute" do
