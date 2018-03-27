@@ -315,7 +315,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers (~> 0.10.0)
+  active_model_serializers (~> 0.10.7)
   bootsnap (>= 1.1.0)
   chromedriver-helper
   coveralls
