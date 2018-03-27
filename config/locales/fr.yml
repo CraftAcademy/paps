@@ -1,0 +1,42 @@
+fr:
+  header:
+    main: BIENVENU!
+    second: ◊ Diffusez les nouveautés ◊
+  sign_up:
+    new_user: s'Inscrivez vous
+    sign_up_page: s'Inscrivez vous
+    sign_up_button: s'Inscrivez vous
+  article:
+    new_article: Nouveau Article
+    create_article: Creeez Article
+    title_article: Titre
+    content_article: Contenu
+    edit_article: Modifiez article
+    delete_article: Supprimez Article
+    submit_article: Envoyez
+    success_create: Article envoyé avec succès.
+    success_update: Article changé avec succès.
+    success_delete: Article supprimé avec succès.
+  sign_in:
+    new_session: Connectez vous
+    new_session_page: Connectez vous
+    sign_in_button: Connectez vous
+  log_out:
+    destroy_user: Désinscrivez vous
+  pay:
+    subscription: Payez avec carte
+    new_subscription: Abonnement
+  local_articles:
+    main: Articles Locaux
+  all_articles:
+    main: Toutes Articles
+  comment:
+    comment: Commentaire
+    email: Courrier électronique
+    submit_comment: Envoyez
+    success: "Commentaire créé avec succès."
+  password:
+    forgot_password: Oublié votre passe?
+    reset_password_button: Envoyez-moi récupération passe instructions
+  field:
+    cannot_be_empty: Domaines ne peuvent pas être vide.
