@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:article) {create(:article)}
-
+  let!(:comment) {create(:comment, article: article)}
   describe 'GET /v1/articles' do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'].first }
@@ -33,6 +33,10 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
 
     it 'is of type articles' do
       expect(object).to have_type 'articles'
+    end
+
+    it 'has relationship' do
+      expect(object).to have_relationship(:comments)
     end
 
     %w(title content).each do |attr|
