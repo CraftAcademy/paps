@@ -11,6 +11,6 @@ class ArticleSerializer < ActiveModel::Serializer
     object.comments.each do |comment|
       CommentSerializer.new(comment).as_json
     end
-
   end
+
 end

@@ -4,6 +4,6 @@ FactoryBot.define do
     content "New Text"
     latitude 57.0
     longitude 11.9
-    address "Göteborg" 
+    address "Göteborg"
   end
 end
