@@ -7,6 +7,6 @@ class Api::V1::ArticlesController < ApplicationController
 
   def show
     article = Article.find_by(id: params[:id])
-    render json: article, status: :ok
+    render json: article, serializer: Articles::ShowSerializer, status: :ok
   end
 end

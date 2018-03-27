@@ -10,16 +10,29 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       get '/api/v1/articles'
     end
 
-    it 'is of type "articles"' do
+    it 'is of type articles' do
       expect(object).to have_type 'articles'
     end
 
-    it 'has comments' do
-      expect(object).to have_attribute 'comments'
+    it 'has a title' do
+      expect(object).to have_attribute(:title)
     end
 
     it 'has a link' do
       expect(object).to have_attribute(:link).with_value("/api/v1/articles/#{article.id}")
+    end
+
+  end
+
+  describe 'GET /v1/articles/id' do
+    let(:document) { JSON.parse(response.body) }
+    let(:object) { document['data'] }
+    before do
+      get "/api/v1/articles/#{article.id}"
+    end
+
+    it 'is of type articles' do
+      expect(object).to have_type 'articles'
     end
 
     %w(title content).each do |attr|
@@ -27,6 +40,5 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
         expect(object).to have_attribute attr.to_sym
       end
     end
-
   end
 end
