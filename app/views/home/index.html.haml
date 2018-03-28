@@ -5,11 +5,6 @@
 = link_to "Sign in", new_user_session_path
 = link_to "Log out", destroy_user_session_path, method: :delete
 = link_to "Pay with Card", new_subscription_path
-- if @local_articles
-  %h3 Local Articles
-  - @local_articles.each do |article|
-    %p= link_to "#{article.title}", article_path(article)
-    %p= sanitize(truncate(article.content, length: 150))
 
 - if @articles
   %h3 All Articles
