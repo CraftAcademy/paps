@@ -1,12 +1,14 @@
 require 'rails_helper'
-
+include Rails.application.routes.url_helpers
 RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:article) { create(:article) }
   let!(:comment) { create(:comment, article: article) }
+  let!(:user) { create(:user, subscriber: true) }
   describe 'GET /v1/articles' do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'].first }
     before do
+      sign_in(user)
       get '/api/v1/articles'
     end
 
@@ -28,6 +30,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'] }
     before do
+      sign_in(user)
       get "/api/v1/articles/#{article.id}"
     end
 
