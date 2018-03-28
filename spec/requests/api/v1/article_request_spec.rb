@@ -1,5 +1,5 @@
 require 'rails_helper'
-include Rails.application.routes.url_helpers
+
 RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:article) { create(:article) }
   let!(:comment) { create(:comment, article: article) }

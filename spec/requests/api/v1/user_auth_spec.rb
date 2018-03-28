@@ -5,7 +5,6 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:comment) {create(:comment, article: article)}
   describe 'none auth user tries to access get /api/v1/artiles' do
     let(:document) { JSON.parse(response.body) }
-      # let(:object) { document }
     before do
       get '/api/v1/articles'
     end
@@ -16,6 +15,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
   end
 
   describe 'user signs in with /api/v1/auth/sign_in' do
+    let(:document) { JSON.parse(response.body) }
     let(:user) { create(:user) }
     let(:credentials) { user.create_new_auth_token }
     let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
@@ -25,13 +25,13 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
         email: user.email, password: user.password,
       }, headers: headers
 
-      response = {
+      expexted_response = {
         data: {
           id: user.id, email: user.email, provider: 'email'
         }
       }
 
-      expect(response).to eq response
+      expect(document).to eq expexted_response
     end
 
   end
