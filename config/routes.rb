@@ -7,10 +7,4 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :new, :show]
   end
-
-  namespace :api do
-    namespace :v1 do
-      resources :articles, only: [:index, :show], constraints: { format: 'json' }
-    end
-  end
 end

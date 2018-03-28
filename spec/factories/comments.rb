@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
-    email "holger@gmail.com"
-    content "comment"
+    email "MyString"
+    content "MyText"
   end
 end

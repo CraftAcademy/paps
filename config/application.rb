@@ -27,17 +27,6 @@ module Paps
       generate.system_tests false
     end
 
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*',
-        headers: :any,
-        methods: %w(:get, :post, :put, :delete),
-        expose: %w(access-token expiry token-type uid client),
-        max_age: 0
-      end
-    end
-
     config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
     config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
     config.stripe.endpoint = '/payment/stripe-integration'

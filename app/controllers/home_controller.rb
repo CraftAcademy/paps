@@ -2,7 +2,19 @@ class HomeController < ApplicationController
   before_action :get_coordinates, only: [:index]
 
   def index
-     @articles = Article.all
+     if !@coordinates.empty?
+       user = create_guest_user
+       location = (current_user ? current_user.address : user.address)
+       @local_articles = Article.near(location, 20)
+       @articles = Article.all
+     else
+       @articles = Article.all
+     end
+  end
+
+  def get_location
+    user = create_guest_user
+    current_user ? current_user.address : user.address
   end
 
   def set_edition
