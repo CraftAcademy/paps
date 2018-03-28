@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-        namespace :v1 do
+    namespace :v1 do
       resources :articles, only: [:index, :show], constraints: { format: 'json' }
     end
   end
