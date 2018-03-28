@@ -1,4 +1,5 @@
-class Api::V1::ArticlesController < ApiController 
+class Api::V1::ArticlesController < ApiController
+  before_action :authenticate_api_v1_user!
 
   def index
     articles = Article.all

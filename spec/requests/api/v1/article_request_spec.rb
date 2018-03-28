@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::ArticlesController, type: :request do
-  let!(:article) {create(:article)}
-  let!(:comment) {create(:comment, article: article)}
+  let!(:article) { create(:article) }
+  let!(:comment) { create(:comment, article: article) }
   describe 'GET /v1/articles' do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'].first }
