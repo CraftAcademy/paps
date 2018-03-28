@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
      if !@coordinates.empty?
-       user = create_guest_user
+      user = create_guest_user
        location = (current_user ? current_user.address : user.address)
        @local_articles = Article.near(location, 20)
        @articles = Article.all
@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     user = create_guest_user
     current_user ? current_user.address : user.address
   end
-
+  
   def set_edition
     if User.near([57.700501, 11.975463], 50).include? current_user
       @edition = 'Gothenburg Edition'

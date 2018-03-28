@@ -1,4 +1,3 @@
-
 @javascript
 Feature: Categories articles based on location for users
   As a Editor
