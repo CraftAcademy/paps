@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+  protect_from_forgery with: :null_session
   def current_user
     super || create_guest_user
   end
