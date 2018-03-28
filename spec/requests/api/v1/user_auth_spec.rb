@@ -26,8 +26,29 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
       }, headers: headers
 
       expexted_response = {
-        data: {
-          id: user.id, email: user.email, provider: 'email'
+        #data:
+        "data" => {
+                  "id" => user.id,
+                  "email" => user.email,
+                  "provider"=> user.provider,
+                  "latitude"=> user.latitude,
+                  "longitude"=> user.longitude,
+                  "uid"=> user.email,
+                  "subscriber"=> user.subscriber,
+                  "address"=> user.address,
+                  "role"=> user.role,
+                  "type" => "user"
+            # Dosen't work with out good old hash rocket :(  Please help us    
+            #id: user.id
+            # email: user.email,
+            # provider: user.provider,
+            # latitude: user.latitude,
+            # longitude: user.longitude,
+            # uid: user.email,
+            # subscriber: user.subscriber,
+            # address: user.address,
+            # role: user.role,
+            # type: "user"
         }
       }
 

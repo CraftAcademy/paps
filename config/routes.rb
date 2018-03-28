@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  default_url_options :host => "example.com"
+  namespace :overrides do
+  end
+  default_url_options host: "example.com"
 
   root controller: :home, action: :index
 
