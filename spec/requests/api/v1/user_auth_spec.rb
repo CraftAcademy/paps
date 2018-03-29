@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Api::V1::ArticlesController, type: :request do
 
   let!(:article) {create(:article)}
