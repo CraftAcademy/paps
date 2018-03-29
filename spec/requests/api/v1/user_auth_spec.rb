@@ -6,7 +6,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
   describe 'none auth user tries to access get /api/v1/artiles' do
     let(:document) { JSON.parse(response.body) }
     before do
-      get '/api/v1/articles'
+      get "/api/v1/articles/#{article.id}"
     end
 
     it 'should return error message if user is not logged in' do
