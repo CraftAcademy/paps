@@ -1,11 +1,11 @@
 RSpec.describe DeviseController, type: :request do
 
+  let!(:user) { create(:user, subscriber: true) }
+
   describe 'user signs in with successfully' do
 
-    let(:document) { JSON.parse(response.body) }
-    let(:user) { create(:user) }
-    # let(:credentials) { user.create_new_auth_token }
-    let(:headers) { { HTTP_ACCEPT: 'application/json' }
+    let(:document) { JSON.parse(response.body)}
+    let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
     it 'valid user returns user data' do
       post '/api/v1/auth/sign_in', params: {
@@ -20,7 +20,6 @@ RSpec.describe DeviseController, type: :request do
 
   describe 'users types in the wrong credentials' do
     let(:document) { JSON.parse(response.body) }
-    let(:user) { create(:user) }
     let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
 
@@ -41,6 +40,6 @@ RSpec.describe DeviseController, type: :request do
 
       expect(document['errors'].first).to eq 'Invalid login credentials. Please try again.'
     end
-  end
 
+  end
 end
