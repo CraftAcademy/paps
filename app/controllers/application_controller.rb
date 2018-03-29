@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  
-  def current_user
+  def current_userrspec
     super || create_guest_user
   end
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root controller: :home, action: :index
 
   devise_for :users
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :articles, only: [:index, :show], constraints: { format: 'json' }
+      mount_devise_token_auth_for 'User', at: 'auth'
     end
   end
 end

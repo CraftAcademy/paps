@@ -1,0 +1,12 @@
+{"data" => {
+          "id"=>"#{article.id}",
+          "type"=>"articles",
+          "attributes"=>{
+          "title"=>"#{article.title}",
+          "content"=>"#{article.content}"},
+          "relationships"=>{
+          "comments"=>{
+          "data"=>[{
+          "id"=>"#{comment.id}", "type"=>"comments"}
+          ]}}}
+}
