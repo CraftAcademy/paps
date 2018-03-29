@@ -4,6 +4,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:article) { create(:article) }
   let!(:comment) { create(:comment, article: article) }
   let!(:user) { create(:user, subscriber: true) }
+
   describe 'GET /v1/articles' do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'].first }
