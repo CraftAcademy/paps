@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :null_session, only: -> { request.format.json }
-  def current_user
+  def current_userrspec
     super || create_guest_user
   end
 
