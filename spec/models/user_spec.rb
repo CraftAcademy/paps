@@ -7,6 +7,12 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :longitude }
     it { is_expected.to have_db_column :latitude }
     it { is_expected.to have_db_column :address }
+    it { is_expected.to have_db_column :uid }
+    it { is_expected.to have_db_column :confirmation_token }
+    it { is_expected.to have_db_column :tokens }
+    it { is_expected.to have_db_column :confirmation_token}
+    it { is_expected.to have_db_column :confirmed_at}
+    it { is_expected.to have_db_column :confirmation_sent_at}
   end
 
   describe "Factory" do
