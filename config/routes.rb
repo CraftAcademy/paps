@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  default_url_options host: "example.com"
-
   root controller: :home, action: :index
 
   devise_for :users
