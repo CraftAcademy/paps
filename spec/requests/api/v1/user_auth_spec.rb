@@ -1,22 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::ArticlesController, type: :request do
-  let(:article) {create(:article)}
-  let(:comment) {create(:comment, article: article)}
+  let!(:article) {create(:article)}
+  let!(:comment) {create(:comment, article: article)}
   describe 'none auth user tries to access get /api/v1/artiles' do
     let(:document) { JSON.parse(response.body) }
-      let(:object) { document }
     before do
       get '/api/v1/articles'
     end
 
     it 'should return error message if user is not logged in' do
-      expect(object['errors'].first).to eq 'You need to sign in or sign up before continuing.'
+      expect(document['errors'].first).to eq 'You need to sign in or sign up before continuing.'
     end
   end
 
   describe 'user signs in with /api/v1/auth/sign_in' do
-    let(:document) {JSON.parse(response.body)}
+    let(:document) { JSON.parse(response.body) }
     let(:user) { create(:user) }
     let(:credentials) { user.create_new_auth_token }
     let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
@@ -26,14 +25,34 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
         email: user.email, password: user.password,
       }, headers: headers
 
-      response = {
-        data: {
-          id: user.id, email: user.email, provider: 'email'
+      expexted_response = {
+        #data:
+        "data" => {
+                  "id" => user.id,
+                  "email" => user.email,
+                  "provider"=> user.provider,
+                  "latitude"=> user.latitude,
+                  "longitude"=> user.longitude,
+                  "uid"=> user.email,
+                  "subscriber"=> user.subscriber,
+                  "address"=> user.address,
+                  "role"=> user.role,
+                  "type" => "user"
+            # Dosen't work with out good old hash rocket :(  Please help us    
+            #id: user.id
+            # email: user.email,
+            # provider: user.provider,
+            # latitude: user.latitude,
+            # longitude: user.longitude,
+            # uid: user.email,
+            # subscriber: user.subscriber,
+            # address: user.address,
+            # role: user.role,
+            # type: "user"
         }
       }
 
-      expect(document['data']).to eq response
-
+      expect(document).to eq expexted_response
     end
 
   end

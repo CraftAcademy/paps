@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :overrides do
+  end
+  default_url_options host: "example.com"
+
   root controller: :home, action: :index
 
   devise_for :users
