@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::ArticlesController, type: :request do
   let!(:article) {create(:article)}
   let!(:comment) {create(:comment, article: article)}
-  describe 'none auth user tries to access get /api/v1/artiles' do
+  describe 'none auth user tries to access get /api/v1/artiles/id' do
     let(:document) { JSON.parse(response.body) }
     before do
       get "/api/v1/articles/#{article.id}"
@@ -54,6 +54,5 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
 
       expect(document['errors'].first).to eq 'Invalid login credentials. Please try again.'
     end
-
   end
 end
