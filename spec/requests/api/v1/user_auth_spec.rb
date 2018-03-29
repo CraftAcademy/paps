@@ -6,7 +6,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
   describe 'none auth user tries to access get /api/v1/artiles' do
     let(:document) { JSON.parse(response.body) }
     before do
-      get '/api/v1/articles'
+      get "/api/v1/articles/#{article.id}"
     end
 
     it 'should return error message if user is not logged in' do
@@ -25,33 +25,9 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
         email: user.email, password: user.password,
       }, headers: headers
 
-      expexted_response = {
-        #data:
-        "data" => {
-                  "id" => user.id,
-                  "email" => user.email,
-                  "provider"=> user.provider,
-                  "latitude"=> user.latitude,
-                  "longitude"=> user.longitude,
-                  "uid"=> user.email,
-                  "subscriber"=> user.subscriber,
-                  "address"=> user.address,
-                  "role"=> user.role,
-                  "type" => "user"
-            #id: user.id
-            # email: user.email,
-            # provider: user.provider,
-            # latitude: user.latitude,
-            # longitude: user.longitude,
-            # uid: user.email,
-            # subscriber: user.subscriber,
-            # address: user.address,
-            # role: user.role,
-            # type: "user"
-        }
-      }
+      expected_response = eval(file_fixture('user.txt').read)
 
-      expect(document).to eq expexted_response
+      expect(document).to eq expected_response
     end
 
   end

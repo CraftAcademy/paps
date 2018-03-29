@@ -8,7 +8,6 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'].first }
     before do
-      sign_in(user)
       get '/api/v1/articles'
     end
 
