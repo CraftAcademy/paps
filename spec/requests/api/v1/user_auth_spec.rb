@@ -38,7 +38,6 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
                   "address"=> user.address,
                   "role"=> user.role,
                   "type" => "user"
-            # Dosen't work with out good old hash rocket :(  Please help us    
             #id: user.id
             # email: user.email,
             # provider: user.provider,
